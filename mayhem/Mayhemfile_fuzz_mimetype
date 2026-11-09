@@ -1,0 +1,10 @@
+project: savantenvs/workerd
+target: fuzz_mimetype
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_mimetype/testsuite
+cmds:
+  - cmd: /mayhem/fuzz_mimetype
+    libfuzzer: true
+    dictionary: /mayhem/mayhem/fuzz_mimetype/fuzz_mimetype.dict
+    timeout: 60

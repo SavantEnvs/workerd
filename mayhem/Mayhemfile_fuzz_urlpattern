@@ -1,0 +1,10 @@
+project: savantenvs/workerd
+target: fuzz_urlpattern
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_urlpattern/testsuite
+cmds:
+  - cmd: /mayhem/fuzz_urlpattern
+    libfuzzer: true
+    dictionary: /mayhem/mayhem/fuzz_urlpattern/fuzz_urlpattern.dict
+    timeout: 60
