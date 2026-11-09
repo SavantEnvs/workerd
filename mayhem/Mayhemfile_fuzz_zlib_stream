@@ -1,0 +1,9 @@
+project: savantenvs/workerd
+target: fuzz_zlib_stream-mined-cad8fbc
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_zlib_stream-mined-cad8fbc/testsuite
+cmds:
+  - cmd: /mayhem/fuzz_zlib_stream
+    libfuzzer: true
+    timeout: 60
